@@ -17,6 +17,11 @@
     <label>Class Name</label>
     <input type="text" ng-model="currentClass.Name">
   </div>
+  <div class="input-row">
+    <label>Minimun Required</label>
+    <input type="text" ng-model="currentClass.MinimumPercentage" placeholder="50">
+     %
+  </div>
 <br>
   <button ng-click="update(currentClass)" class="btn btn-positive btn-block">Save class</button>
   <button ng-click="reset()" class="btn btn-positive btn-block">Clean</button>

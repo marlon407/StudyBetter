@@ -1,0 +1,34 @@
+
+<header class="bar bar-nav">
+  <button ng-click="backApp()" class="btn pull-left">
+    Back
+  </button>
+ <span ng-click="delete(aval.AvaliationId)" class="icon icon-trash pull-right"></span>
+  <h1 class="title">Avaliation details</h1>
+</header>
+<br><br>
+<form class="input-group">
+  <div class="input-row">
+    <label>Code</label>
+    <input type="text" readonly disabled ng-model="aval.AvaliationId">
+  </div>
+  <div class="input-row">
+    <label>Description</label>
+    <input type="text" ng-model="aval.Description">
+  </div>
+  <div class="input-row">
+    <label>Weight</label>
+    <input type="text" ng-model="aval.Worth" placeholder="Ex. 20">
+  </div>
+  <div class="input-row">
+    <label>Weight Achieved</label>
+    <input type="text" ng-model="aval.Grade" placeholder="Ex. 15.5">
+  </div>
+  <div class="input-row">
+    <label>Assigent Date</label>
+    <input type="date"  ng-model="aval.Data">
+  </div>
+<br>
+  <button ng-click="update(aval)" class="btn btn-positive btn-block">Save Avaliation</button>
+  <button ng-click="reset()" class="btn btn-positive btn-block">Clean</button>
+</form>

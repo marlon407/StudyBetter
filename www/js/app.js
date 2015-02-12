@@ -10,8 +10,8 @@ run(function($ionicPlatform, $cordovaSQLite) {
       StatusBar.styleDefault();
     }
     db = window.openDatabase("myapp.db", "1.0", "My app", -1);
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS Classes (ClassId integer primary key AUTOINCREMENT, Name text)");
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS Avaliations (AvaliationId integer primary key AUTOINCREMENT, Description text, Worth real, Grade real)");
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS Classes (ClassId integer primary key AUTOINCREMENT, Name text, MinimumPercentage real)");
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS Avaliations (AvaliationId integer primary key AUTOINCREMENT, ClassId integer, Description text, Worth real, Grade real, Data text)");
   });
 });
 
@@ -28,6 +28,18 @@ app.config(['$routeProvider',
       when('/classes/:ClassId', {
         templateUrl: 'Views/ClassDetail.html',
         controller: 'ClassDetailCtrl'
+      }).
+      when('/avaliations/:ClassId', {
+        templateUrl: 'Views/Avaliations.html',
+        controller: 'AvaliationsCtrl'
+      }).
+      when('/avaliation/:AvaliationId', {
+        templateUrl: 'Views/AvaliationDetail.html',
+        controller: 'AvaliationDetailCtrl'
+      }).
+      when('/newAvaliation/:ClassId', {
+        templateUrl: 'Views/NewAvaliation.html',
+        controller: 'NewAvaliationCtrl'
       }).
       otherwise({
         redirectTo: '/classes'

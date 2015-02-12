@@ -1,0 +1,14 @@
+<header class="bar bar-nav">
+	<span ng-click="backApp()" class="icon icon-left-nav pull-left"></span>
+      <span ng-click="addAvaliation()" class="icon icon-plus pull-right"></span>
+  <h1 class="title">List of avaliations</h1>
+</header>
+<br><br>
+<ul class="table-view">
+  <li class="table-view-cell" ng-repeat="aval in avalList">
+    <a href="#/avaliation/{{aval.AvaliationId}}" class="navigate-right">
+      {{aval.Description}}
+    </a>
+  </li>
+</us>
+
