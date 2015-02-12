@@ -1,0 +1,15 @@
+<header class="bar bar-nav">
+
+  <button class="btn pull-left" onclick="location.href='#/classes/0'">
+     Create new</button>
+  <h1 class="title">List of classes</h1>
+</header>
+<br><br>
+<ul class="table-view">
+  <li class="table-view-cell" ng-repeat="class in classesList">
+    <a href="#/classes/{{class.ClassId}}" class="navigate-right">
+      {{class.Name}}	
+    </a>
+  </li>
+</us>
+
