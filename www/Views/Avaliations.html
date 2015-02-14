@@ -4,11 +4,23 @@
   <h1 class="title">List of avaliations</h1>
 </header>
 <br><br>
+<div class="content">
+  <div class="card">
 <ul class="table-view">
   <li class="table-view-cell" ng-repeat="aval in avalList">
-    <a href="#/avaliation/{{aval.AvaliationId}}" class="navigate-right">
-      {{aval.Description}}
+    <a href="#/avaliation/{{aval.AvaliationId}}" data-transition="slide-in" class="navigate-right">
+      {{aval.Description}} Weight: {{aval.Worth}} Grade:{{aval.Grade}}
     </a>
   </li>
-</us>
+</ul>
+</div>
+</div>
+
+
+<div class="bar bar-standard bar-footer-secondary">
+    You've got so far {{achivied}} of {{max}} points<br>
+    There are still {{stillMissing}} points away of achiving the minimum required!
+</div>
+
+
 

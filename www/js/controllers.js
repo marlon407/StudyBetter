@@ -26,6 +26,7 @@ studyBetterControllers.controller('ClassDetailCtrl', ['$scope', 'ClassRepository
     }
 
     $scope.update = function(currentClass) {
+
     	if(currentClass.ClassId == undefined){
 	    	ClassRepository.save(currentClass);    	
 	    }
@@ -42,10 +43,23 @@ studyBetterControllers.controller('ClassDetailCtrl', ['$scope', 'ClassRepository
 studyBetterControllers.controller('AvaliationsCtrl', ['$scope', 'AvaliationRepository','$window','$routeParams' ,
 	function($scope, AvaliationRepository, $window, $routeParams) {
 		$scope.avalList = [];
+		$scope.achivied = 0;
+		$scope.max = 0;
 		$scope.classId = $routeParams.ClassId;
+		$scope.stillMissing = 0;
 	    AvaliationRepository.all($routeParams.ClassId).then(function(avalList){
 	        $scope.avalList = avalList;
+	        for(i =0; i < $scope.avalList.length; i++){
+	    		if($scope.avalList[i].Grade != null){
+	    			$scope.max += $scope.avalList[i].Worth;
+	    			$scope.achivied += $scope.avalList[i].Grade;
+	    		}
+	    	}
 	    });
+
+	    AvaliationRepository.getMiniumFromClass($routeParams.ClassId).then(function(result){
+			$scope.stillMissing = result.MinimumPercentage - $scope.achivied;
+		});
 
 	    $scope.addAvaliation = function(){
 	    	var ref = "#/newAvaliation/"+$scope.classId;
@@ -62,10 +76,6 @@ studyBetterControllers.controller('AvaliationDetailCtrl', ['$scope', 'Avaliation
 	    if($routeParams.AvaliationId != 0){
 		    AvaliationRepository.getById($routeParams.AvaliationId).then(function(aval){
 		        $scope.aval = aval;
-		        debugger;
-		        if($scope.aval.Grade == "undefined"){
-	    			$scope.aval.Grade = "";	
-	    		}
 		        $scope.aval.Data = new Date($scope.aval.Data);
 		    });;
 		}
@@ -81,16 +91,17 @@ studyBetterControllers.controller('AvaliationDetailCtrl', ['$scope', 'Avaliation
     }
 
     $scope.update = function(aval) {
-    	if(aval.AvaliationId == undefined){
-	    	AvaliationRepository.save(aval);    	
-	    }
-	    else{
-	    	AvaliationRepository.update(aval);
-	    }
+    	if(aval.Grade == undefined) aval.Grade = null;
+    	if(aval.Difficult == undefined) aval.Difficult = null;
+	    AvaliationRepository.update(aval);
         $window.alert("Successful operation");
         $window.history.back();
-	    
       };
+
+     $scope.study = function(dif){
+     	var ref = "#/study/"+dif;
+	    $window.location.href=ref;
+     }
 }]);
 
 studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRepository','$window','$routeParams' ,
@@ -103,6 +114,8 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
     }
 
     $scope.update = function(aval) {
+    	if(aval.Difficult == undefined) aval.Difficult = null;
+    	if(aval.Grade == undefined) aval.Grade = null;
     	aval.ClassId = $routeParams.ClassId;
 	    AvaliationRepository.save(aval);
         $window.alert("Successful operation");
@@ -110,6 +123,18 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
 	    
       };
 }]);
+
+//Study -------------------------------------
+
+studyBetterControllers.controller('studyCtrl', ['$scope', 'AvaliationRepository','$window','$routeParams' ,
+	function($scope, AvaliationRepository, $window, $routeParams) {
+		
+	}]);
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@
     Back
   </button>
  <span ng-click="delete(aval.AvaliationId)" class="icon icon-trash pull-right"></span>
+ <span ng-click="study(aval.Difficult)" class="icon icon-compose pull-right"></span>
   <h1 class="title">Avaliation details</h1>
 </header>
 <br><br>
@@ -27,6 +28,10 @@
   <div class="input-row">
     <label>Assigent Date</label>
     <input type="date"  ng-model="aval.Data">
+  </div>
+  <div class="input-row">
+    <label>Difficult</label>
+    <input type="text"  placeholder="Difficult 1 up to 10" ng-model="aval.Difficult">
   </div>
 <br>
   <button ng-click="update(aval)" class="btn btn-positive btn-block">Save Avaliation</button>

@@ -85,14 +85,23 @@ angular.module('services', [])
       });
     };
 
+    self.getMiniumFromClass = function(id) {
+      var parameters = [id];
+        return DBA.query('SELECT MinimumPercentage FROM Classes WHERE ClassId = ?', parameters)
+        .then(function(result) {
+          return DBA.getById(result);
+      });
+    };
+
     self.save =function(aval){
-      return DBA.query('insert into Avaliations (Description, ClassId, Worth, Grade, Data) values (?,?,?,?,?)', 
-        [aval.Description, aval.ClassId, aval.Worth, aval.Grade, aval.Data]);
+      return DBA.query('insert into Avaliations (Description, ClassId, Worth, Grade, Data, Difficult) values (?,?,?,?,?,?)', 
+        [aval.Description, aval.ClassId, aval.Worth, aval.Grade, aval.Data,aval.Difficult]);
     };
 
     self.update = function(aval) {
-      var parameters = [aval.Description, aval.ClassId, aval.Worth, aval.Grade, aval.Data, aval.AvaliationId];
-      return DBA.query("UPDATE Avaliations SET Description = (?), ClassId = (?), Worth = (?), Grade = (?), Data = (?)  WHERE AvaliationId = (?)", parameters);
+      debugger;
+      var parameters = [aval.Description, aval.ClassId, aval.Worth, aval.Grade, aval.Data, aval.Difficult, aval.AvaliationId];
+      return DBA.query("UPDATE Avaliations SET Description = (?), ClassId = (?), Worth = (?), Grade = (?), Data = (?), Difficult = (?) WHERE AvaliationId = (?)", parameters);
     }
 
     self.remove = function(id) {
