@@ -45,6 +45,7 @@ studyBetterControllers.controller('AvaliationsCtrl', ['$scope', 'AvaliationRepos
 		$scope.avalList = [];
 		$scope.achivied = 0;
 		$scope.max = 0;
+		$scope.orderProp = 'Data';
 		$scope.classId = $routeParams.ClassId;
 		$scope.stillMissing = 0;
 	    AvaliationRepository.all($routeParams.ClassId).then(function(avalList){
@@ -54,12 +55,26 @@ studyBetterControllers.controller('AvaliationsCtrl', ['$scope', 'AvaliationRepos
 	    			$scope.max += $scope.avalList[i].Worth;
 	    			$scope.achivied += $scope.avalList[i].Grade;
 	    		}
+	    		var evDate = new Date($scope.avalList[i].Data);
+	    		$scope.avalList[i].FormatData = dataFormat(evDate);
 	    	}
 	    });
 
 	    AvaliationRepository.getMiniumFromClass($routeParams.ClassId).then(function(result){
 			$scope.stillMissing = result.MinimumPercentage - $scope.achivied;
 		});
+
+		var dataFormat = function(d){
+			var curr_date = d.getDate();
+			var curr_month = d.getMonth();
+			var curr_year = d.getFullYear();
+			return (m_names[curr_month] + ", " + curr_date + "-" + curr_year);	
+		}
+
+	    $scope.editClass = function(){
+	    	var ref = "#/classes/"+$scope.classId;
+	    	$window.location.href=ref;
+	    }
 
 	    $scope.addAvaliation = function(){
 	    	var ref = "#/newAvaliation/"+$scope.classId;
@@ -121,6 +136,8 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
     	if(aval.Difficult == undefined) aval.Difficult = null;
     	if(aval.Grade == undefined) aval.Grade = null;
     	aval.ClassId = $routeParams.ClassId;
+    	aval.Data = new Date(aval.Data);
+    	debugger;
 	    AvaliationRepository.save(aval);
         $window.alert("Successful operation");
         $window.history.back();
@@ -130,8 +147,8 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
 
 //Study -------------------------------------
 
-studyBetterControllers.controller('studyCtrl', ['$scope', 'AvaliationRepository','$window','$routeParams',
-	function($scope, AvaliationRepository, $window, $routeParams) {
+studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParams',
+	function($scope, $window, $routeParams) {
 		$scope.timerRunning = false;
  		$scope.countdown =1000 * parseInt($routeParams.Dif);
             $scope.startTimer = function (){
@@ -149,6 +166,39 @@ studyBetterControllers.controller('studyCtrl', ['$scope', 'AvaliationRepository'
             });
 	}]);
 
+//Upcoming -------------------------------------
+
+studyBetterControllers.controller('upcomingCtrl', ['$scope', 'UpcomingRepository','$window',
+	function($scope, UpcomingRepository, $window) {
+		//TODO - study SQLIte to only bring the upcoming events from database
+		UpcomingRepository.all().then(function(allEvents){
+			$scope.events = [];
+			var dt = new Date(Date.now());
+			for(i = 0; i < allEvents.length; i++){
+				var evDate = new Date(allEvents[i].Data);
+				if(dt < evDate){
+					allEvents[i].FormatData = dataFormat(evDate);
+					$scope.events.push(allEvents[i]);
+				}
+
+			}
+		});
+
+		var dataFormat = function(d){
+			var curr_date = d.getDate();
+			var curr_month = d.getMonth();
+			var curr_year = d.getFullYear();
+			return (m_names[curr_month] + ", " + curr_date + "-" + curr_year);	
+		}
+
+		$scope.backApp = function() {
+        	$window.history.back();
+    	}
+	}]);
+
+var m_names = new Array("January", "February", "March", 
+"April", "May", "June", "July", "August", "September", 
+"October", "November", "December");
 
 
 

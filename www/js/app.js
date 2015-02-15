@@ -45,6 +45,10 @@ app.config(['$routeProvider',
         templateUrl: 'Views/study.html',
         controller: 'studyCtrl'
       }).
+      when('/upcoming/', {
+        templateUrl: 'Views/Upcoming.html',
+        controller: 'upcomingCtrl'
+      }).
       otherwise({
         redirectTo: '/classes'
       });

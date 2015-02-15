@@ -1,16 +1,22 @@
 <header class="bar bar-nav">
-	<span ng-click="backApp()" class="icon icon-left-nav pull-left"></span>
-      <span ng-click="addAvaliation()" class="icon icon-plus pull-right"></span>
+	<button ng-click="backApp()" class="btn pull-left">Back</button>
+  <span ng-click="addAvaliation()" class="icon icon-plus pull-right"></span>
+  <span ng-click="editClass()" class="icon icon-edit pull-right" style="margin-right:13px"></span>
   <h1 class="title">List of evaluations</h1>
 </header>
 <br><br>
 <div class="content">
   
 <ul class="table-view">
-  <li class="table-view-cell" ng-repeat="aval in avalList">
-    <a href="#/avaliation/{{aval.AvaliationId}}" data-transition="slide-in" class="navigate-right">
-      {{aval.Description}} Weight: {{aval.Worth}} Grade:{{aval.Grade}}
+  <li class="table-view-cell" ng-repeat="aval in avalList | orderBy:'Data':reverse">
+    <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade != null &&  aval.Grade != ''" class="navigate-right line-blue">
+      {{aval.Description}} - Weight: {{aval.Worth}} Grade:{{aval.Grade}}
     </a>
+    <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade == null || aval.Grade ==''" class="navigate-right line-red">
+      {{aval.Description}} -  Date: {{aval.FormatData}}
+    </a>
+
+
   </li>
 </ul>
 </div>

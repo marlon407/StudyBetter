@@ -46,9 +46,7 @@
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/fonts/ratchicons.svg \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/fonts/ratchicons.ttf \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/fonts/ratchicons.woff \
-/Users/marloncasagranda/studyBetter/platforms/android/assets/www/img/bkgdimage.gif \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/img/ionic.png \
-/Users/marloncasagranda/studyBetter/platforms/android/assets/www/img/line.jpg \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/js/app.js \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/js/controllers.js \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/js/ng-cordova.min.js \
@@ -100,4 +98,5 @@
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/Views/ClassesList.html \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/Views/NewAvaliation.html \
 /Users/marloncasagranda/studyBetter/platforms/android/assets/www/Views/study.html \
+/Users/marloncasagranda/studyBetter/platforms/android/assets/www/Views/Upcoming.html \
 /Users/marloncasagranda/studyBetter/platforms/android/ant-build/AndroidManifest.xml \

@@ -109,4 +109,17 @@ angular.module('services', [])
     }
 
     return self;
+})
+
+.factory('UpcomingRepository', function($cordovaSQLite, DBA){
+      var self = this;
+
+      self.all = function() {
+        return DBA.query('SELECT * FROM Avaliations')
+        .then(function(result){
+          return DBA.getAll(result);
+      });
+    };
+
+    return self;
 });

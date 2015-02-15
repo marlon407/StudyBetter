@@ -1,0 +1,13 @@
+<header class="bar bar-nav">
+
+  <button ng-click="backApp()" class="btn pull-left">Back</button>
+  <h1 class="title">Upcoming events</h1>
+</header>
+<br><br>
+<ul class="table-view">
+  <li class="table-view-cell" ng-repeat="item in events | orderBy:'FormatData':reverse">
+    <a href="#/avaliation/{{item.AvaliationId}}" data-transition="slide-in" class="navigate-right">
+      {{item.Description}} -  {{item.FormatData}} - {{item.ClassId}}	
+    </a>
+  </li>
+</us>
