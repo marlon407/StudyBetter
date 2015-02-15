@@ -1,0 +1,27 @@
+
+<header class="bar bar-nav">
+  <button ng-click="backApp()" class="btn pull-left">
+    Back
+  </button>
+  <span ng-click="delete(currentClass.ClassId)" class="icon icon-trash pull-right"></span>
+  <span class="icon icon-edit pull-right" style="margin-right:13px"></span>
+  <h1 class="title">Class details</h1>
+</header>
+<br><br>
+<form class="input-group">
+  <div class="input-row">
+    <label>Class Code</label>
+    <input type="text" readonly disabled ng-model="currentClass.ClassId">
+  </div>
+  <div class="input-row">
+    <label>Class Name</label>
+    <input type="text" ng-model="currentClass.Name">
+  </div>
+  <div class="input-row">
+    <label>Minimun Required</label>
+    <input type="text" ng-model="currentClass.MinimumPercentage" placeholder="50">
+  </div>
+<br>
+  <button ng-click="update(currentClass)" class="btn btn-positive btn-block">Save class</button>
+  <button ng-click="reset()" class="btn btn-positive btn-block">Clean</button>
+</form>

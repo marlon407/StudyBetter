@@ -1,6 +1,6 @@
 var db = null;
 
-var app = angular.module('studyBetter', ['ionic','ngCordova','ngRoute',  'services', 'studyBetterControllers']).
+var app = angular.module('studyBetter', ['ionic','ngCordova','ngRoute', 'timer',  'services', 'studyBetterControllers']).
 run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins.Keyboard) {
