@@ -7,7 +7,7 @@
 <ul class="table-view">
   <li class="table-view-cell" ng-repeat="item in events | orderBy:'FormatData':reverse">
     <a href="#/avaliation/{{item.AvaliationId}}" data-transition="slide-in" class="navigate-right">
-      {{item.Description}} -  {{item.FormatData}} - {{item.ClassId}}	
+      {{item.Description}} -  {{item.FormatData}} - {{item.Name}}	
     </a>
   </li>
 </us>

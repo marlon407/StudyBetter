@@ -25,14 +25,20 @@ studyBetterControllers.controller('ClassDetailCtrl', ['$scope', 'ClassRepository
         $window.history.back();
     }
 
-    $scope.update = function(currentClass) {
+    $scope.delete = function(id){
+    	ClassRepository.remove(id);
+    	$window.alert("Successful operation");
+        var ref = "#/classes/";
+	    $window.location.href=ref;
+    }
 
+    $scope.update = function(currentClass) {
     	if(currentClass.ClassId == undefined){
-	    	ClassRepository.save(currentClass);    	
-	    }
-	    else{
+			ClassRepository.save(currentClass);    		
+    	}
+    	else
 	    	ClassRepository.update(currentClass);
-	    }
+	    
         $window.alert("Successful operation");
         $window.history.back();
 	    
@@ -55,9 +61,15 @@ studyBetterControllers.controller('AvaliationsCtrl', ['$scope', 'AvaliationRepos
 	    			$scope.max += $scope.avalList[i].Worth;
 	    			$scope.achivied += $scope.avalList[i].Grade;
 	    		}
-	    		var evDate = new Date($scope.avalList[i].Data);
-	    		$scope.avalList[i].FormatData = dataFormat(evDate);
-	    	}
+	    		if($scope.avalList[i].Data != "Invalid Date"){
+	    			var evDate = new Date($scope.avalList[i].Data);
+	    			$scope.avalList[i].FormatData = dataFormat(evDate);
+	    		}
+	    		else
+	    			$scope.avalList[i].FormatData = "Not defined";
+
+	    	}	
+	    	$scope.achivied = ($scope.achivied).toFixed(2);
 	    });
 
 	    AvaliationRepository.getMiniumFromClass($routeParams.ClassId).then(function(result){
@@ -118,8 +130,12 @@ studyBetterControllers.controller('AvaliationDetailCtrl', ['$scope', 'Avaliation
       };
 
      $scope.study = function(dif){
-     	var ref = "#/study/"+dif;
-	    $window.location.href=ref;
+     	if(dif == "")
+     		$window.alert("Please add a difficult");
+     	else {
+     		var ref = "#/study/"+dif;
+		    $window.location.href=ref;
+		}
      }
 }]);
 
@@ -150,11 +166,20 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
 studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParams',
 	function($scope, $window, $routeParams) {
 		$scope.timerRunning = false;
+		$scope.showStuffs = false;
  		$scope.countdown =1000 * parseInt($routeParams.Dif);
             $scope.startTimer = function (){
                 $scope.$broadcast('timer-start');
                 $scope.timerRunning = true;
             };
+
+            $scope.backApp = function() {
+        		$window.history.back();
+    		}
+
+    		$scope.addTime = function() {
+        		$scope.countdown = 960; 
+    		}
  
             $scope.stopTimer = function (){
                 $scope.$broadcast('timer-stop');
@@ -162,7 +187,8 @@ studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParam
             };
  
             $scope.$on('timer-stopped', function (event, data){
-                console.log('Timer Stopped - data = ', data);
+                $window.alert("Congradulations, you finished your studies");
+                $scope.showStuffs = true;
             });
 	}]);
 

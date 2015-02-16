@@ -1,10 +1,14 @@
 .line-blue {
 	color: cadetblue;
-	background-color: aquamarine;
+	background-color: lightgreen;
+	border-radius: 10px;
+	margin-bottom: 3px;
 }
 
 .line-red {
 	color: chocolate;
-	background-color: floralwhite
+	background-color: floralwhite;
+	border-radius: 10px;
+	margin-bottom: 3px;
 	
 }

@@ -48,6 +48,11 @@ angular.module('services', [])
       });
     };
 
+    self.update = function(currentClass) {
+      var parameters = [currentClass.Name, currentClass.MinimumPercentage, currentClass.ClassId];
+      return DBA.query("UPDATE Classes SET Name = (?), MinimumPercentage = (?) WHERE ClassId = (?)", parameters);
+    }
+
     self.getById = function(id) {
       var parameters = [id];
         return DBA.query('SELECT * FROM Classes WHERE ClassId = ?', parameters)
@@ -55,6 +60,11 @@ angular.module('services', [])
           return DBA.getById(result);
       });
     };
+
+    self.remove = function(id) {
+      var parameters = [id];
+      return DBA.query("DELETE FROM Classes WHERE ClassId = (?)", parameters);
+    }
 
     self.save =function(currentClass){
       return DBA.query('insert into Classes (Name, MinimumPercentage) values (?, ?)', 
@@ -113,9 +123,8 @@ angular.module('services', [])
 
 .factory('UpcomingRepository', function($cordovaSQLite, DBA){
       var self = this;
-
       self.all = function() {
-        return DBA.query('SELECT * FROM Avaliations')
+        return DBA.query('SELECT a.Description,a.AvaliationId,a.Data,a.ClassId, c.Name FROM Avaliations as a join Classes as c on a.ClassId=c.ClassId')
         .then(function(result){
           return DBA.getAll(result);
       });

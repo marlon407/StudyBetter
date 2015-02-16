@@ -4,7 +4,11 @@
 </h1>
 <br><br>
 <div>
-		<button ng-click="startTimer()" ng-disabled="timerRunning" class="btn btn-positive btn-block btn-outlined">Start Studing</button>
-        <button ng-click="stopTimer()" ng-disabled="!timerRunning" class="btn btn-negative btn-block btn-outlined">Stop Studing</button>
+	<button ng-click="startTimer()" ng-disabled="timerRunning" class="btn btn-positive btn-block btn-outlined">Start Studing</button>
+    <button ng-click="stopTimer()" ng-disabled="!timerRunning" class="btn btn-negative btn-block btn-outlined">Stop Studing</button>
 
-    </div>
+ </div>
+ <div ng-show="showStuffs">
+	<button ng-click="backApp()" class="btn btn-positive btn-block btn-outlined">Back</button>
+    <button ng-click="addTime()" class="btn btn-negative btn-block btn-outlined">Add 10 minutes</button> 	
+ </div>

@@ -10,10 +10,10 @@
 <ul class="table-view">
   <li class="table-view-cell" ng-repeat="aval in avalList | orderBy:'Data':reverse">
     <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade != null &&  aval.Grade != ''" class="navigate-right line-blue">
-      {{aval.Description}} - Weight: {{aval.Worth}} Grade:{{aval.Grade}}
+      {{aval.Description}} <br> Weight: {{aval.Worth}} Grade:{{aval.Grade}}
     </a>
     <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade == null || aval.Grade ==''" class="navigate-right line-red">
-      {{aval.Description}} -  Date: {{aval.FormatData}}
+      {{aval.Description}} <br>  Date: {{aval.FormatData}}
     </a>
 
 
