@@ -1,6 +1,6 @@
 
 <header class="bar bar-nav">
-  <button ng-click="backApp()" class="btn pull-left">Back</button>
+  <button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
   <span ng-click="delete(currentClass.ClassId)" class="icon icon-trash pull-right"></span>
   <h1 class="title">Class details</h1>
 </header>
@@ -18,6 +18,7 @@
     <label>Minimun Required</label>
     <input type="text" ng-model="currentClass.MinimumPercentage" placeholder="50">
   </div>
+
 <br>
   <button ng-click="update(currentClass)" class="btn btn-positive btn-block">Save class</button>
   <button ng-click="reset()" class="btn btn-positive btn-block">Clean</button>

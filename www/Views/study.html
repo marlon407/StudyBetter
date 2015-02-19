@@ -1,14 +1,17 @@
-<br><br>
-<h1 class="title">
-<timer interval="1000" autostart="false" countdown="countdown">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
-</h1>
-<br><br>
-<div>
-	<button ng-click="startTimer()" ng-disabled="timerRunning" class="btn btn-positive btn-block btn-outlined">Start Studing</button>
-    <button ng-click="stopTimer()" ng-disabled="!timerRunning" class="btn btn-negative btn-block btn-outlined">Stop Studing</button>
 
- </div>
- <div ng-show="showStuffs">
-	<button ng-click="backApp()" class="btn btn-positive btn-block btn-outlined">Back</button>
-    <button ng-click="addTime()" class="btn btn-negative btn-block btn-outlined">Add 10 minutes</button> 	
- </div>
+<div class="list card" style="margin-top:20%">
+	<div class="item item-divider" style="margin-bottom:10%; padding-left: 10%;padding-top: 10%;">
+		<h4>
+			<timer interval="1000" autostart="false" countdown="countdown">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+		</h4>
+	</div>
+	<div class="item">
+		<button ng-click="startTimer()" ng-disabled="timerRunning" class="btn btn-positive btn-block btn-outlined">Start Studing</button>
+	    <button ng-click="stopTimer()" ng-disabled="!timerRunning" class="btn btn-negative btn-block btn-outlined">Stop Studing</button>
+
+	 </div>
+	 <div class="item" style="margin-bottom:10%; padding-left: 25%;padding-top: 10%;">
+		<button ng-click="backApp()" class="btn btn-primary btn-outlined" style="margin-right:5px">Back</button>
+	    <button ng-click="addTime()" class="btn btn-primary btn-outlined">Add 10 minutes</button> 	
+	 </div>
+</div>

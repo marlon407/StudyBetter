@@ -1,26 +1,28 @@
 <header class="bar bar-nav">
-	<button ng-click="backApp()" class="btn pull-left">Back</button>
+	<button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
   <span ng-click="addAvaliation()" class="icon icon-plus pull-right"></span>
   <span ng-click="editClass()" class="icon icon-edit pull-right" style="margin-right:13px"></span>
   <h1 class="title">List of evaluations</h1>
 </header>
-<br><br>
-<div class="content">
+
+<div class="content-with-footer content">
   
 <ul class="table-view">
-  <li class="table-view-cell" ng-repeat="aval in avalList | orderBy:'Data':reverse">
-    <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade != null &&  aval.Grade != ''" class="navigate-right line-blue">
+  <li class="table-view-divider">Non-Graded</li>
+  <li class="table-view-cell" ng-repeat="aval in avalListUngraded | orderBy:'Data':reverse">
+    <a href="#/avaliation/{{aval.AvaliationId}}"  class="navigate-right">
+      {{aval.Description}} <br> Date: {{aval.FormatData}}
+    </a>
+  </li>
+
+  <li class="table-view-divider">Graded</li>
+  <li class="table-view-cell" ng-repeat="aval in avalListGraded | orderBy:'Data':reverse">
+    <a href="#/avaliation/{{aval.AvaliationId}}"  class="navigate-right">
       {{aval.Description}} <br> Weight: {{aval.Worth}} Grade:{{aval.Grade}}
     </a>
-    <a href="#/avaliation/{{aval.AvaliationId}}" ng-show="aval.Grade == null || aval.Grade ==''" class="navigate-right line-red">
-      {{aval.Description}} <br>  Date: {{aval.FormatData}}
-    </a>
-
-
   </li>
 </ul>
 </div>
-
 
 
 <div class="bar bar-standard bar-footer">

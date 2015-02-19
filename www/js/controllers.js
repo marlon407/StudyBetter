@@ -56,17 +56,25 @@ studyBetterControllers.controller('AvaliationsCtrl', ['$scope', 'AvaliationRepos
 		$scope.stillMissing = 0;
 	    AvaliationRepository.all($routeParams.ClassId).then(function(avalList){
 	        $scope.avalList = avalList;
+	        $scope.avalListGraded = [];
+	        $scope.avalListUngraded = [];
 	        for(i =0; i < $scope.avalList.length; i++){
-	    		if($scope.avalList[i].Grade != null){
-	    			$scope.max += $scope.avalList[i].Worth;
-	    			$scope.achivied += $scope.avalList[i].Grade;
-	    		}
-	    		if($scope.avalList[i].Data != "Invalid Date"){
+	        	if($scope.avalList[i].Data != "Invalid Date"){
 	    			var evDate = new Date($scope.avalList[i].Data);
 	    			$scope.avalList[i].FormatData = dataFormat(evDate);
 	    		}
 	    		else
 	    			$scope.avalList[i].FormatData = "Not defined";
+
+	    		if($scope.avalList[i].Grade != null){
+	    			$scope.max += $scope.avalList[i].Worth;
+	    			$scope.achivied += $scope.avalList[i].Grade;
+	    			$scope.avalListGraded.push($scope.avalList[i]);
+	    		}
+	    		else
+	    			$scope.avalListUngraded.push($scope.avalList[i]);
+
+	    		
 
 	    	}	
 	    	$scope.achivied = ($scope.achivied).toFixed(2);
@@ -153,7 +161,6 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
     	if(aval.Grade == undefined) aval.Grade = null;
     	aval.ClassId = $routeParams.ClassId;
     	aval.Data = new Date(aval.Data);
-    	debugger;
 	    AvaliationRepository.save(aval);
         $window.alert("Successful operation");
         $window.history.back();
@@ -166,8 +173,7 @@ studyBetterControllers.controller('NewAvaliationCtrl', ['$scope', 'AvaliationRep
 studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParams',
 	function($scope, $window, $routeParams) {
 		$scope.timerRunning = false;
-		$scope.showStuffs = false;
- 		$scope.countdown =1000 * parseInt($routeParams.Dif);
+ 		$scope.countdown = 1000 * parseInt($routeParams.Dif);
             $scope.startTimer = function (){
                 $scope.$broadcast('timer-start');
                 $scope.timerRunning = true;
@@ -178,7 +184,9 @@ studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParam
     		}
 
     		$scope.addTime = function() {
-        		$scope.countdown = 960; 
+        		$scope.$broadcast('timer-start');
+                $scope.timerRunning = true;
+        		$scope.countdown = 600;
     		}
  
             $scope.stopTimer = function (){
@@ -186,9 +194,10 @@ studyBetterControllers.controller('studyCtrl', ['$scope', '$window','$routeParam
                 $scope.timerRunning = false;
             };
  
-            $scope.$on('timer-stopped', function (event, data){
-                $window.alert("Congradulations, you finished your studies");
-                $scope.showStuffs = true;
+            $scope.$on('timer-tick', function (event, data){
+            	if(data.millis == 0){
+	                $window.alert("Congradulations, you finished your studies");
+           		}
             });
 	}]);
 
