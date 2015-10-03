@@ -1,0 +1,14 @@
+<header class="bar bar-nav">
+	<button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
+  	<h1 class="title">Saindo de {{city}}</h1>
+</header>
+<br><br>
+<ul class="table-view">
+  <li class="table-view-cell" ng-repeat="item in route">
+      {{item}}
+  </li>
+</ul>
+
+<nav ng-click="changeFrom()" class="bar bar-tab footer-bar">
+  <div class="title">Ver de {{inverseCity}}</div>
+</nav>

@@ -1,0 +1,796 @@
+[
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "06:10",
+                        "12:05"
+                    ]
+                },
+                {
+                    "city": "Prainha",
+                    "hora": [
+                        "05:25",
+                        "08:00",
+                        "15:50"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "06:10",
+                        "12:05"
+                    ]
+                },
+                {
+                    "city": "Prainha",
+                    "hora": [
+                        "05:25",
+                        "08:00",
+                        "15:50"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "08:20",
+                        "16:30"
+                    ]
+                },
+                {
+                    "city": "Prainha",
+                    "hora": [
+                        "19:00"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+                "city":"JOINVILLE",
+                "route": ["Av. Albano Schultz", 
+                        "Av. Paulo Medeiros", 
+                        "Av. Procópio Gomes", 
+                        "Rua Ministro Calógeras", 
+                        "Av. Getúlio Vargas", 
+                        "Rua Santa Catarina", 
+                        "Rua Waldomiro José Borges", 
+                        "Rodovia SC 415", 
+                        "Rodovia BR 280", 
+                        "Rua João Zeferino Corrêa", 
+                        "Rua Benedito C. da Veiga", 
+                        "Av. Nereu Ramos",
+                        "Rua Prefeito Higino Aguiari"]
+            },
+            {
+                "city":"PRAINHA",
+                "route": [
+                        "Av. Inácio Espíndola", 
+                        "Av. São Francisco", 
+                        "Rua. Teresina", 
+                        "Rua. Ceará", 
+                        "Av. Atlântica", 
+                        "Av. Duque de Caxias", 
+                        "Rod. Duque de Caxias", 
+                        "Rod. BR 280", 
+                        "Rua Dom Fernando Trejo Y Sanabria", 
+                        "Rua Joaquim José Silveira", 
+                        "Rua Marcilio Dias", 
+                        "Rua Cel. Carvalho", 
+                        "Av. Nereu Ramos", 
+                        "Rodovia BR 280", 
+                        "Rua Prefeito Higino Aguiar", 
+                        "Rua Nereu Ramos", 
+                        "Av. Getúlio Vargas", 
+                        "Rua Benedito C. Veiga", 
+                        "Rua João Zeferino Correia", 
+                        "Rodovia BR 280.", 
+                        "Rodovia SC 415", 
+                        "Rua Waldomiro José Borges", 
+                        "Rua Santa Catarina", 
+                        "Rua Barra Velha", 
+                        "Rua São Paulo", 
+                        "Rua Ministro Calógeras", 
+                        "Av. JK", 
+                        "Rua 9 de Março", 
+                        "Av. Hermann Lepper", 
+                        "Rua Princesa Izabel", 
+                        "Av. Albano Schultz"]   
+            }
+        ],
+        "nameLine": "LINHA - 544-0 - PRAINHA - JOINVILLE",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "04:15",
+                        "05:25",
+                        "06:00",
+                        "06:40",
+                        "06:55",
+                        "07:40",
+                        "10:20",
+                        "11:20",
+                        "13:05",
+                        "13:55",
+                        "14:30",
+                        "16:30",
+                        "17:05",
+                        "17:50",
+                        "18:20",
+                        "18:50",
+                        "20:00",
+                        "21:10",
+                        "22:30",
+                        "23:35"
+                    ]
+                },
+                {
+                    "city": "Porto Grande",
+                    "hora": [
+                        "04:45",
+                        "05:55",
+                        "06:30",
+                        "07:15",
+                        "07:30",
+                        "08:15",
+                        "10:55",
+                        "12:00",
+                        "13:40",
+                        "14:30",
+                        "15:10",
+                        "17:10",
+                        "17:45",
+                        "19:00",
+                        "19:35",
+                        "21:45",
+                        "22:35",
+                        "23:00"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "05:50",
+                        "06:50",
+                        "07:35",
+                        "09:20",
+                        "10:20",
+                        "11:20",
+                        "13:35",
+                        "15:30",
+                        "17:10",
+                        "21:00",
+                        "22:15",
+                        "23:30"
+                    ]
+                },
+                {
+                    "city": "Porto Grande",
+                    "hora": [
+                        "04:55",
+                        "06:25",
+                        "07:25",
+                        "08:10",
+                        "09:55",
+                        "10:55",
+                        "11:55",
+                        "14:15",
+                        "16:05",
+                        "17:45",
+                        "21:35",
+                        "22:50"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "05:50",
+                        "12:00",
+                        "13:40",
+                        "19:20",
+                        "22:10",
+                        "23:20"
+                    ]
+                },
+                {
+                    "city": "Porto Grande",
+                    "hora": [
+                        "04:45",
+                        "06:25",
+                        "12:35",
+                        "14:15",
+                        "20:00",
+                        "22:45"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-1 - PORTO GRANDE",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "09:15",
+                        "12:20",
+                        "17:30",
+                        "19:35",
+                        "22:05"
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                        "06:00",
+                        "06:30",
+                        "10:30",
+                        "13:10",
+                        "18:30"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-2 - TREVO",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "06:15",
+                        "12:05",
+                        "15:10",
+                        "18:00"
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "03:50",
+                        "05:20",
+                        "07:00",
+                        "08:40",
+                        "13:00",
+                        "16:00",
+                        "19:05",
+                        "20:10"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "12:05",
+                        "17:45"
+
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "03:55",
+                        "05:20",
+                        "13:00",
+                        "18:55",
+                        "19:50"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "09:50",
+                        "17:10"
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "11:00",
+                        "18:10"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-3 - ARAQUARI",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "09:50",
+                        "19:10"
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "12:15"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "10:00",
+                        "16:30",
+                        "19:00"
+
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "12:15",
+                        "18:00"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "07:20"
+                    ]
+                },
+                {
+                    "city": "ARAQUARI",
+                    "hora": [
+                        "08:45"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-4 - LINGUADO",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "08:20",
+                        "16:05",
+                        "20:30",
+                        "22:45"
+                    ]
+                },
+                {
+                    "city": "SÃO FRANCISCO DO SUL",
+                    "hora": [
+                        "10:30",
+                        "17:35",
+                        "21:00"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "08:20",
+                        "20:30"
+
+                    ]
+                },
+                {
+                    "city": "SÃO FRANCISCO DO SUL",
+                    "hora": [
+                        "10:30"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "21:00"
+                    ]
+                },
+                {
+                    "city": "SÃO FRANCISCO DO SUL",
+                    "hora": [
+                        "06:00",
+                        "15:40"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-5 - SÃO FRANCISCO DO SUL",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "16:03"
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                        "06:34"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                    ]
+                },
+                {
+                    "city": "TREVO",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 544-6 - BR 280",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "09:30",
+                        "17:00"
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                        "06:50",
+                        "14:30"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 792-0 - BALNEÁRIO BARRA DO SUL VIA CORVETA",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "22:45"
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                        "17:30"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 792-1 - BALNEÁRIO BARRA DO SUL VIA BR - 101",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "07:40",
+                        "13:15",
+                        "15:18",
+                        "16:45",
+                        "20:00"
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                        "05:35",
+                        "06:00",
+                        "13:00",
+                        "15:00",
+                        "18:25"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "07:40",
+                        "14:30",
+                        "15:10",
+                        "20:00"
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                        "06:00",
+                        "08:10",
+                        "13:00",
+                        "18:25"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "Joinville",
+                    "hora": [
+                        "08:30",
+                        "15:00"
+                    ]
+                },
+                {
+                    "city": "BALNEÁRIO BARRA DO SUL",
+                    "hora": [
+                        "07:00",
+                        "13:15"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 792-2 - BALNEÁRIO BARRA DO SUL",
+        "lineType": "Intermunicipal (Urbano)"
+    },
+    {
+        "workingDays": {
+            "departure": [
+                {
+                    "city": "ITINGA",
+                    "hora": [
+                        "06:10",
+                        "11:30",
+                        "15:50"
+                    ]
+                },
+                {
+                    "city": "BARRA VELHA",
+                    "hora": [
+                        "07:35",
+                        "13:15",
+                        "17:30"
+                    ]
+                }
+            ]
+        },
+        "saturday": {
+            "departure": [
+                {
+                    "city": "ITINGA",
+                    "hora": [
+                        "06:10",
+                        "11:30",
+                        "15:50"
+                    ]
+                },
+                {
+                    "city": "BARRA VELHA",
+                    "hora": [
+                        "07:35",
+                        "13:15",
+                        "17:30"
+                    ]
+                }
+            ]
+        },
+        "sunday": {
+            "departure": [
+                {
+                    "city": "ITINGA",
+                    "hora": [
+                        "08:30",
+                        "15:00"
+                    ]
+                },
+                {
+                    "city": "BARRA VELHA",
+                    "hora": [
+                        "07:00",
+                        "13:15"
+                    ]
+                }
+            ]
+        },
+        "itineraries": [
+            {
+            }
+        ],
+        "nameLine": "LINHA - 863-0 - ITINGA - BARRA VELHA",
+        "lineType": "Intermunicipal (Urbano)"
+    }
+]

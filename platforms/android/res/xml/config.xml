@@ -8,7 +8,7 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-    <name>studyBetter</name>
+    <name>Vmares</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>

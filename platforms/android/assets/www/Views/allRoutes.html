@@ -1,0 +1,13 @@
+<header class="bar bar-nav">
+  <h1 class="title">Todas as linhas</h1>
+  <a href="#/search/" class="icon icon-search pull-right"></a>
+</header>
+<br><br>
+<ul class="table-view">
+  <li class="table-view-cell" ng-repeat="item in routes">
+    <a href="#/routeDays/{{item.nameLine}}" class="route-link">
+      {{item.nameLine}}
+    </a>
+    <span class="icon icon-star"></span>
+  </li>
+</ul>

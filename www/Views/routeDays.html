@@ -1,0 +1,42 @@
+<header class="bar bar-nav">
+
+  <button ng-click="backApp()" class="btn btn-outlined pull-left">Back</button>
+  <h1 class="title">Saida de {{lineFrom}}</h1>
+  <a href="#/itinerary/{{line.nameLine}}" class="btn btn-outlined pull-right">Ver itinerario</a>
+</header>
+<br><br>
+
+<div class="ui-grid-b list-of-days">
+  <div class="ui-block-a">
+	  <div class="item item-divider">
+	    Dias uteis
+	  </div>
+  	<ul class="table-view">
+	  <li class="table-view-cell" ng-repeat="item in workingDayLine.hora">
+	      {{item}}
+	  </li>
+	</us>
+  </div>
+  
+    <div class="ui-block-b">
+  	Sabádo
+  	<ul class="table-view">
+	  <li class="table-view-cell" ng-repeat="item in saturdayLine.hora">
+	      {{item}}
+	  </li>
+	</us>
+  </div>
+
+  <div class="ui-block-c">
+  	Domingo
+  	<ul class="table-view">
+	  <li class="table-view-cell" ng-repeat="item in sundayLine.hora">
+	      {{item}}
+	  </li>
+	</us>
+  </div>
+</div><!-- /grid-b -->
+
+<nav ng-click="changeFrom()" class="bar bar-tab footer-bar">
+  <div class="title">Ver de {{inverseLine}}</div>
+</nav>

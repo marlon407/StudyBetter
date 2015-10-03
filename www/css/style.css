@@ -1,14 +1,32 @@
-.line-blue {
-	color: cadetblue;
-	background-color: lightgreen;
-	border-radius: 10px;
-	margin-bottom: 3px;
+.list-of-days{
+	margin-top: 10px;
+	text-align: center;
 }
 
-.line-red {
-	color: chocolate;
-	background-color: floralwhite;
-	border-radius: 10px;
-	margin-bottom: 3px;
-	
+.table-view-cell{
+	padding: 11px 15px !important;
+}
+.footer-bar{
+	cursor: pointer;
+	background-color: #5cb85c !important;
+}
+
+.footer-bar .title{
+	color: white !important;
+}
+
+.input-search{
+	margin-top: 4px !important;
+	width: 80% !important;
+}
+
+.table-view-cell a{
+	float: left;
+} 
+.icon-star{
+	float: right;
+}
+
+.route-link{
+	width: 100%;
 }
